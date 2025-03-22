@@ -24,7 +24,7 @@ export default function Home() {
 
       const user = { enrollmentNumber: decoded.enrollmentNumber, name: decoded.name };
 
-      const response = await fetch("http://localhost:5000/tickets/add", {
+      const response = await fetch("https://cabpool-backend-production.up.railway.app/tickets/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...details, userId: decoded.enrollmentNumber, riders: [user] }),
@@ -58,7 +58,7 @@ export default function Home() {
 
       const user = { enrollmentNumber: decoded.enrollmentNumber, name: decoded.name };
 
-      const response = await fetch(`http://localhost:5000/tickets/join/${ticketId}`, {
+      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/join/${ticketId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user }),
@@ -90,7 +90,7 @@ export default function Home() {
         return;
       }
 
-      const response = await fetch(`http://localhost:5000/tickets/unjoin/${ticketId}`, {
+      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/unjoin/${ticketId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ enrollmentNumber: decoded.enrollmentNumber }),
@@ -124,7 +124,7 @@ export default function Home() {
 
       const enrollmentNumber = decoded.enrollmentNumber;
 
-      const response = await fetch(`http://localhost:5000/tickets/delete/${ticketId}`, {
+      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/delete/${ticketId}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ enrollmentNumber }),
@@ -143,7 +143,7 @@ export default function Home() {
 
   const handleComplete = async (ticketId) => {
     try {
-      const response = await fetch(`http://localhost:5000/tickets/complete/${ticketId}`, {
+      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/complete/${ticketId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" }
       });
@@ -162,7 +162,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchTickets() {
       try {
-        const response = await fetch("http://localhost:5000/tickets/all");
+        const response = await fetch("https://cabpool-backend-production.up.railway.app/tickets/all");
         const data = await response.json();
         if (response.ok) {
           const sortedTickets = data

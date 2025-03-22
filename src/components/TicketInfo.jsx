@@ -39,7 +39,7 @@ export default function TicketInfo() {
   async function fetchTicketDetails() {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/tickets/${ticketId}`);
+      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/${ticketId}`);
       const data = await response.json();
       if (response.ok) {
         setTicket(data);
@@ -71,7 +71,7 @@ export default function TicketInfo() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/tickets/updatefare/${ticket._id}`,
+        `https://cabpool-backend-production.up.railway.app/tickets/updatefare/${ticket._id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -111,7 +111,7 @@ export default function TicketInfo() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/tickets/markPaid/${ticketId}/${riderId}`,
+        `https://cabpool-backend-production.up.railway.app/tickets/markPaid/${ticketId}/${riderId}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -145,7 +145,7 @@ export default function TicketInfo() {
       return;
     try {
       const response = await fetch(
-        `http://localhost:5000/tickets/close/${ticketId}`,
+        `https://cabpool-backend-production.up.railway.app/tickets/close/${ticketId}`,
         {
           method: "PATCH",
         }
