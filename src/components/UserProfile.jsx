@@ -27,7 +27,7 @@ export default function User({ isAuthenticated }) {
 
     async function fetchUserTickets() {
       try {
-        const response = await fetch("https://cabpool-backend-production.up.railway.app/tickets/all");
+        const response = await fetch("http://localhost:5000/tickets/all");
         const data = await response.json();
         if (response.ok) {
           const created = data.filter(ticket => ticket.userId === decoded.enrollmentNumber);
@@ -55,7 +55,7 @@ export default function User({ isAuthenticated }) {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <Navbar />
+      <Navbar setIsAuthenticated={isAuthenticated} />
       <div className="max-w-4xl mx-auto mt-16 p-6">
         
         {/* User Info Card */}
