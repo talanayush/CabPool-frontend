@@ -34,7 +34,7 @@ export default function TicketInfo() {
       }
   
       const upiId = data.upiId;
-      const link = `upi://pay?pa=${upiId}&pn=CabSharing&am=${amount}&cu=INR`;
+      const link = `upi://pay?pa=${upiId}&pn=${ownerId}&am=${amount}&cu=INR`;
       setUpiLink(link);
   
       const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
