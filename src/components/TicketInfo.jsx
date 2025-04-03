@@ -25,7 +25,7 @@ export default function TicketInfo() {
   async function handlePayment(ownerId, amount) {
     try {
       console.log(ownerId);
-      const response = await fetch(`http://localhost:5000/tickets/get-upi/${ownerId}`);
+      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/get-upi/${ownerId}`);
       const data = await response.json();
   
       if (!response.ok) {
