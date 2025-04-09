@@ -25,7 +25,7 @@ export default function TicketInfo() {
   async function handlePayment(ownerId, amount) {
     try {
       console.log(ownerId);
-      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/get-upi/${ownerId}`);
+      const response = await fetch(`https://cabpool-backend.onrender.com/tickets/get-upi/${ownerId}`);
       const data = await response.json();
   
       if (!response.ok) {
@@ -53,7 +53,7 @@ export default function TicketInfo() {
   async function fetchTicketDetails() {
     try {
       setLoading(true);
-      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/${ticketId}`);
+      const response = await fetch(`https://cabpool-backend.onrender.com/tickets/${ticketId}`);
       const data = await response.json();
       if (response.ok) {
         setTicket(data);
@@ -75,7 +75,7 @@ export default function TicketInfo() {
   async function closeTicket() {
     if (!window.confirm("Are you sure you want to archive this ticket?")) return;
     try {
-      const response = await fetch(`https://cabpool-backend-production.up.railway.app/tickets/close/${ticketId}`, {
+      const response = await fetch(`https://cabpool-backend.onrender.com/tickets/close/${ticketId}`, {
         method: "PATCH",
       });
 

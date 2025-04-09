@@ -27,7 +27,7 @@ export default function User({ isAuthenticated }) {
 
     async function fetchUserTickets() {
       try {
-        const response = await fetch("https://cabpool-backend-production.up.railway.app/tickets/all");
+        const response = await fetch("https://cabpool-backend.onrender.com/tickets/all");
         const data = await response.json();
         if (response.ok) {
           const created = data.filter(ticket => ticket.userId === decoded.enrollmentNumber);
