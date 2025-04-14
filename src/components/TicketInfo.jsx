@@ -177,7 +177,7 @@ export default function TicketInfo() {
   return (
     <>
     <Navbar />
-    <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 pt-15 mt-8 border border-gray-200">
+    <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 pt-15 pb-17 mt-8 border border-gray-200">
       <h2 className="text-2xl font-bold text-center text-gray-800">🎟️ Ticket Details</h2  >
 
       <div className="mt-4 text-lg">
@@ -276,7 +276,7 @@ export default function TicketInfo() {
       )}
 
         
-        <div className="flex justify-center pt-10 px-4">
+        <div className="flex justify-center pt-10 px-4 pb-20">
           <button
             onClick={handleClick}
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-semibold text-sm sm:text-base md:text-lg px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer"

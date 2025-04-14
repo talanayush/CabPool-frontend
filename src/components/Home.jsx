@@ -220,7 +220,7 @@ export default function Home() {
   return (
     <div >
       <Navbar setIsAuthenticated={setIsAuthenticated} />
-      <div className="mt-16 p-6 max-w-3xl mx-auto">
+      <div className="mt-16 p-6 max-w-3xl mx-auto pb-20">
         {/* Add Ticket Button */}
         <div className="flex justify-center">
           <button
