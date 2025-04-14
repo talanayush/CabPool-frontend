@@ -7,6 +7,7 @@ import User from "./components/UserProfile";
 import TicketInfo from "./components/TicketInfo";
 import AboutPage from "./components/About";
 import Chat from "./components/Chat";
+import Service from "./components/Service";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
 
@@ -54,6 +55,14 @@ function App() {
             <User isAuthenticated={isAuthenticated} /> 
             : 
             <Navigate to="/login" />}
+        />
+        <Route 
+          path="/services" 
+          element={isAuthenticated ? 
+            <Service/> 
+             
+            : 
+            <Navigate to="/" /> }
         />
         <Route 
           path="/ticket/:ticketId" 
